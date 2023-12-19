@@ -1436,8 +1436,6 @@ def random_bytes(n):
         description: Bytes.
     """
 
-    n = min(n, 100 * 1024)  # set 100KB limit
-
     params = CaseInsensitiveDict(request.args.items())
     if "seed" in params:
         random.seed(int(params["seed"]))
@@ -1466,8 +1464,6 @@ def stream_random_bytes(n):
       200:
         description: Bytes.
     """
-    n = min(n, 100 * 1024)  # set 100KB limit
-
     params = CaseInsensitiveDict(request.args.items())
     if "seed" in params:
         random.seed(int(params["seed"]))
